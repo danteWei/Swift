@@ -1,4 +1,4 @@
-Swift
+Swift Repo Documentation
 =====
 
 This is the repo where I upload my learning notes for [swift](https://developer.apple.com/swift/) (a new programming language created by Apple). 
