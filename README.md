@@ -1,7 +1,7 @@
 Swift
 =====
 
-This is the repo where I will upload my learning notes for [swift](https://developer.apple.com/swift/) (a new programming language created by Apple). 
+This is the repo where I upload my learning notes for [swift](https://developer.apple.com/swift/) (a new programming language created by Apple). 
 This repo contains a palyground project, a text version of my notes, and a swift version of my notes. 
 
 If you know any of the following, Swift should not be hard for you:
