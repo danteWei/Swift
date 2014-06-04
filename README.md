@@ -13,7 +13,7 @@ If you know any of the following, Swift should not be hard for you:
   - no main function required
 
 - Java 
-  - automatic reference counting, similar to garbage collector in Java
+  - automatic reference counting, similar to garbage collector in Java, sort of...
 
 - C/Objective-c/cocoa touch, etc. 
   - Swift is build on C and Objective-C
