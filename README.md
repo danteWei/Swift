@@ -16,7 +16,7 @@ If you know any of the following, Swift should not be hard for you:
   - automatic reference counting, similar to garbage collector in Java
 
 - C/Objective-c/cocoa touch, etc. 
-  - Swift is nuild on C and Objective-C
+  - Swift is build on C and Objective-C
 
 ===
 
@@ -39,6 +39,8 @@ If you really want to learn Swift, this book is a "must-have".
 
 I **do not own** the materials in my notes, if you want to use the codes in my notes, 
 please refer to the book mentioned above.
+
+**No commercial use of my notes is allow!** Contact me first if you want to share the repo!
 
 ##Usage##
 ***
