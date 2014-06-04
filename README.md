@@ -46,7 +46,7 @@ Just go to the `file` manu and `import` the playground project into your Xcode a
 You will see the codes in the right half of the screen, and the output in the left half.
 
 
-
+***
 
 Author: Xinjing Wei
 
