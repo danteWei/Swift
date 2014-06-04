@@ -4,6 +4,8 @@ Swift Repo Documentation
 This is the repo where I upload my learning notes for [swift](https://developer.apple.com/swift/) (a new programming language created by Apple). 
 This repo contains a palyground project, a text version of my notes, and a swift version of my notes. 
 
+I'll continue to upload my notes until I finish reading the book mentioned below.
+
 If you know any of the following, Swift should not be hard for you:
 
 - Python 
