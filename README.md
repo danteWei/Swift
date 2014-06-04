@@ -37,7 +37,7 @@ Most of the comments as well as the codes are direct quotes from the book [Swift
 This book is free and is available through iBooks Store. And it is the official book for learning Swift.
 If you really want to learn Swift, this book is a "must-have".
 
-I *do not* **own** the materials in my notes, if you want to use the codes in my notes, 
+I **do not own** the materials in my notes, if you want to use the codes in my notes, 
 please refer to the book mentioned above.
 
 ##Usage##
