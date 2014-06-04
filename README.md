@@ -6,12 +6,17 @@ This repo contains a palyground project, a text version of my notes, and a swift
 
 If you know any of the following, Swift should not be hard for you:
 
-- Python (no semi-colons required, no main function required)
+- Python 
+  - no semi-colons required
+  - no main function required)
 
-- Java (automatic reference counting, similar to garbage collector in Java)
+- Java 
+  - automatic reference counting, similar to garbage collector in Java
 
-- C/Objective-c/cocoa touch, etc. (Swift is nuild on C and Objective-C)
+- C/Objective-c/cocoa touch, etc. 
+  - Swift is nuild on C and Objective-C
 
+===
 
 To *interact* with the codes in my notes, you need to have the follwing **in the correct order**: 
 
@@ -23,19 +28,20 @@ To *interact* with the codes in my notes, you need to have the follwing **in the
 
 ***
 
-Copy Rights
+##Copy Rights##
 ***
 
 Most of the comments as well as the codes are direct quotes from the book [Swift](https://itunes.apple.com/us/book/the-swift-programming-language/id881256329?mt=11).
-This book is free and is available through iBooks Store. 
+This book is free and is available through iBooks Store. And it is the official book for learning Swift.
+If you really want to learn Swift, this book is a "must-have".
 
-I do not own the marterials in my notes, if you want to use the codes in my notes, 
+I do not own the materials in my notes, if you want to use the codes in my notes, 
 please refer to the book mentioned above.
 
-Usage
+##Usage##
 ***
 
-Just `import` the playground project into your Xcode and open the project.
+Just go to the `file` manu and `import` the playground project into your Xcode and open the project.
 
 You will see the codes in the right half of the screen, and the output in the left half.
 
@@ -43,5 +49,5 @@ You will see the codes in the right half of the screen, and the output in the le
 
 
 Author: Xinjing Wei
-</br>
+
 June 4th, 2014
