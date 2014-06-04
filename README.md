@@ -43,9 +43,10 @@ please refer to the book mentioned above.
 ##Usage##
 ***
 
-- Go to the `file` menu and `import` the playground project into your Xcode and open the project. You will see the codes in the right half of the screen, and the output in the left half; Or
+- Go to the `file` menu and `import` the playground project into your Xcode and open the project; Or
 - Create your own *playground* project and copy & paste the contents into your playground file
 
+You will see the codes in the right half of the screen, and the output in the left half
 
 ***
 
