@@ -8,7 +8,7 @@ If you know any of the following, Swift should not be hard for you:
 
 - Python 
   - no semi-colons required
-  - no main function required)
+  - no main function required
 
 - Java 
   - automatic reference counting, similar to garbage collector in Java
