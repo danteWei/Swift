@@ -30,7 +30,7 @@ To *interact* with the codes in my notes, you need to have the follwing **in the
 
 ***
 
-##Copy Rights##
+##Copyrights##
 ***
 
 Most of the comments as well as the codes are direct quotes from the book [Swift](https://itunes.apple.com/us/book/the-swift-programming-language/id881256329?mt=11).
