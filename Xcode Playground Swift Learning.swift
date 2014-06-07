@@ -416,3 +416,65 @@ let sideLength = optionalSquare?.sideLength
 
 
                                                         /* Enumerations and Structures */
+//Use "enum" to create  an enumeration
+//Like all other named types, them can have methods associated with them
+enum Rank: Int {
+    case Ace = 1 //only have to specify the first raw value
+    case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
+    case Jack, Queen, King
+    func simpleDescription() -> String {
+        switch self {
+        case .Ace: //abbreviated form, because the type of self is already known
+            return "ace"
+        case .Jack:
+            return "jack"
+        case .Queen:
+            return "queen"
+        case .King:
+            return "king"
+        default:
+            return String(self.toRaw())
+        }
+    }
+}
+
+let ace = Rank.Ace
+let aceRawValue = ace.toRaw() //"toRaw()" & "fromRaw()" to convert between the raw value and the enumeratoin value
+
+if let convertedRank = Rank.fromRaw(3) {
+    let treeDescription = convertedRank.simpleDescription()
+}
+
+
+//You don't have to provide a raw value if not needed
+enum Suit {
+    case  spades, Hearts, Diamonds, Clubs
+    func simpleDescription() -> String {
+        switch self {
+        case .spades:
+            return "spades"
+        case .Hearts:
+            return "hearts"
+        case .Diamonds:
+            return "diamonds"
+        case .Clubs:
+            return "clubs"
+        }
+    }
+}
+
+let hearts = Suit.Hearts
+let heartDescription = hearts.simpleDescription()
+
+//struct is similar to C/Objective-C
+//structures are passed by copy, but classes are passed by reference
+struct Card {
+    var rank: Rank
+    var suit: Suit
+    func simpleDescription() -> String {
+        return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+    }
+}
+
+let threeOfSpades = Card(rank: .Three, suit: .Spades)
+let threeOfSpacesDescription = threeOfSpades.simpleDescription()
