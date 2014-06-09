@@ -30,7 +30,7 @@ To *interact* with the codes in my notes, you need to have the follwing **in the
 
 ***
 
-Topics Covered So Far
+##Topics Covered So Far##
 ***
 
 - Variables
