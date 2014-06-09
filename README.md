@@ -30,6 +30,30 @@ To *interact* with the codes in my notes, you need to have the follwing **in the
 
 ***
 
+Topics Covered So Far
+***
+
+- Variables
+  - Instances
+  - Local variables
+- Control Flow
+  - For loop
+  - Switches
+  - For-in
+  - While
+- Functions & Closure
+  - Function foundamentals
+  - Nested functions
+  - Closures
+- Classes & Objects
+  - Class foundamentals
+  - Initializer & de-initializer
+  - Willset & Didset
+  - Differences of methods vs functions
+- Enumerations & Structures
+  - Enmueration foundamentals
+  - Structure foundamentals
+
 ##Copyrights##
 ***
 
