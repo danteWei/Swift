@@ -1,4 +1,5 @@
 // Playground - noun: a place where people can play
+//All information comes from the Book "Swift" by Apple
 
 import UIKit
 
@@ -448,10 +449,10 @@ if let convertedRank = Rank.fromRaw(3) {
 
 //You don't have to provide a raw value if not needed
 enum Suit {
-    case  spades, Hearts, Diamonds, Clubs
+    case  Spades, Hearts, Diamonds, Clubs
     func simpleDescription() -> String {
         switch self {
-        case .spades:
+        case .Spades:
             return "spades"
         case .Hearts:
             return "hearts"
@@ -478,3 +479,91 @@ struct Card {
 
 let threeOfSpades = Card(rank: .Three, suit: .Spades)
 let threeOfSpacesDescription = threeOfSpades.simpleDescription()
+
+//Instances of the same enumeration member can have different values associated with them
+//Associated values and raw values are different: 
+//The raw value of an enumeration member is the same for all of its instances, 
+//and you provide the raw value when you define the enumeration.
+enum ServerResponse {
+    case Result(String, String)
+    case Error(String)
+}
+
+let success = Server.Result("6:00 am", "8:09 pm")
+let failure = Server.Error("Out of cheese.")
+
+switch success {
+    case let .Result(sunrise, sunset):
+        let serverResponse = "Sunrise is at \(sunrise) and sunset is at \(sunset)"
+    case let .Error(error):
+        ler serverResponse = "Failure... \(error)"
+}
+
+
+                                                    /* Protocols & Extensions */
+//Use "protocol" to declare a protocol
+protocol ExampleProtocol {
+    var simpleDescription: String { get }
+    mutating func adjust() //"mutating" means you can modify the state of the value
+}
+let protocolValue: ExampleProtocol = a
+protocolValue.simpleDescription
+
+
+//Classes, enumerations, and structs can all adopt protocols
+class SimpleClass: ExampleProtocol { //class don't need "mutating" keyword b/c methods can always modify the class
+    var simpleDescription: String = "A very simple class."
+    var anotherProperty: Int = 69105
+
+    func adjust() {
+        simpleDecrtiption += " now 100% adjusted."
+    }
+}
+
+var a = SimpleClass()
+a.adjust()
+let aDescription = a.simpleDescription
+
+struct SimpleStructure: ExampleProtocol {
+    var simpleDescription: String = "A simple structure"
+    mutating func adjust() {
+        simpleDesciption += " (adjusted)"
+    }
+}
+
+var b = SimpleStructure()
+b.adjust()
+let bDescription = b.simpleDescription
+
+
+//Use "extension" to add functionality to an existing type
+//You can use extensions to add protocol conformance to a type that is delcared, or imported from a library or framework
+extension Int: ExampleProtocol {
+    var simpleDescriptioin: String {
+    return "The number \(self)"
+    }
+    mutating func adjust() {
+        self += 42
+    }
+}
+
+7.simmpleDescription
+
+extension Double: ExampleProtocol {
+    var absoluteValue" Double {
+    if self < 0 {
+        self = - self
+    }
+    return self
+    }
+    
+    mutating func adjust() {
+        self += 10
+    }
+}
+
+(-15.6).absoluteValue
+
+
+
+                                                                /* Generics */

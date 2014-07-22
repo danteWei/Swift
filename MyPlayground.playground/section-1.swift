@@ -1,4 +1,5 @@
 // Playground - noun: a place where people can play
+//All information comes from the Book "Swift" by Apple
 
 import UIKit
 
@@ -83,12 +84,12 @@ else {
 //switches
 let vagetable = "red pepper"
 switch vagetable {
-    case "celery":
-        let vegetableComment = "Add some raisins and make ants on a log"
-    case "cucumber", "watercress":
-        let vegetableComment = "That would make a good tea sandwich."
-    case let x where x.hasSuffix("pepper"):
-        let vegetableComment = "Is it a spicy \(x)?"
+case "celery":
+    let vegetableComment = "Add some raisins and make ants on a log"
+case "cucumber", "watercress":
+    let vegetableComment = "That would make a good tea sandwich."
+case let x where x.hasSuffix("pepper"):
+    let vegetableComment = "Is it a spicy \(x)?"
 default: //must have a default case
     let vegetableComment = "Everything tastes good in soup."
 }
@@ -126,7 +127,7 @@ n
 
 var m = 2
 do {
-m = m * 2
+    m = m * 2
 } while m < 100 //this ensures that the while loop is run at least once
 
 m
@@ -227,11 +228,11 @@ numbers.map({
     (number: Int) -> Int in
     let result = 3 * number
     return result
-})
+    })
 
 //You have several options for writing closures more concisely.
-//When a closure’s type is already known, such as the callback for a delegate, 
-//you can omit the type of its parameters, its return type, or both. 
+//When a closure’s type is already known, such as the callback for a delegate,
+//you can omit the type of its parameters, its return type, or both.
 //Single statement closures implicitly return the value of their only statement.
 numbers.map({ number in 3 * number })
 
@@ -240,7 +241,7 @@ numbers.map({ number in 3 * number })
 //A closure passed as the last argument to a function can appear immediately after the parentheses
 sort([1, 5, 3, 12, 2]) {$0 > $1}
 
-                                                            /* Objects & Classes */
+/* Objects & Classes */
 
 //This version of the Shape class is missing something important: an initializer
 //use init to create one
@@ -327,7 +328,7 @@ testCircle.area()
 testCircle.simpleDescription()
 
 
-//in addition to simple properties that are stored, 
+//in addition to simple properties that are stored,
 //properties can have a getter and a setter.
 class EquilateralTriangle: NamedShape {
     var sideLength: Double = 0.0
@@ -339,15 +340,15 @@ class EquilateralTriangle: NamedShape {
     }
     
     var perimeter: Double {
-        //getter and setter for perimeter
-        get {
-            return 3.0 * sideLength
-        }
-        set {
-            //the new value has the implicit name "newValue".
-            //you can provide an explicit name like this: set(valueName) {...}
-            sideLength = newValue / 3.0
-        }
+    //getter and setter for perimeter
+    get {
+        return 3.0 * sideLength
+    }
+    set {
+        //the new value has the implicit name "newValue".
+        //you can provide an explicit name like this: set(valueName) {...}
+        sideLength = newValue / 3.0
+    }
     }
     
     override func simpleDescription() -> String {
@@ -415,7 +416,7 @@ let sideLength = optionalSquare?.sideLength
 
 
 
-                                                        /* Enumerations and Structures */
+/* Enumerations and Structures */
 //Use "enum" to create  an enumeration
 //Like all other named types, them can have methods associated with them
 enum Rank: Int {
@@ -448,10 +449,10 @@ if let convertedRank = Rank.fromRaw(3) {
 
 //You don't have to provide a raw value if not needed
 enum Suit {
-    case  spades, Hearts, Diamonds, Clubs
+    case  Spades, Hearts, Diamonds, Clubs
     func simpleDescription() -> String {
         switch self {
-        case .spades:
+        case .Spades:
             return "spades"
         case .Hearts:
             return "hearts"
@@ -478,3 +479,93 @@ struct Card {
 
 let threeOfSpades = Card(rank: .Three, suit: .Spades)
 let threeOfSpacesDescription = threeOfSpades.simpleDescription()
+
+//Instances of the same enumeration member can have different values associated with them
+//Associated values and raw values are different:
+//The raw value of an enumeration member is the same for all of its instances,
+//and you provide the raw value when you define the enumeration.
+enum ServerResponse {
+    case Result(String, String)
+    case Error(String)
+}
+
+let success = ServerResponse.Result("6:00 am", "8:09 pm")
+let failure = ServerResponse.Error("Out of cheese.")
+
+switch success {
+case let .Result(sunrise, sunset):
+    let serverResponse = "Sunrise is at \(sunrise) and sunset is at \(sunset)"
+case let .Error(error):
+    let serverResponse = "Failure... \(error)"
+}
+
+
+                                                            /* Protocols & Extensions */
+//Use "protocol" to declare a protocol
+protocol ExampleProtocol {
+    var simpleDescription: String { get }
+    mutating func adjust() //"mutating" means you can modify the state of the value
+}
+
+
+//Classes, enumerations, and structs can all adopt protocols
+class SimpleClass: ExampleProtocol { //class don't need "mutating" keyword b/c methods can always modify the class
+    var simpleDescription: String = "A very simple class."
+    var anotherProperty: Int = 69105
+    
+    func adjust() {
+        simpleDescription += " now 100% adjusted."
+    }
+}
+
+var a = SimpleClass()
+a.adjust()
+let aDescription = a.simpleDescription
+
+let protocolValue: ExampleProtocol = a
+protocolValue.simpleDescription
+
+
+struct SimpleStructure: ExampleProtocol {
+    var simpleDescription: String = "A simple structure"
+    mutating func adjust() {
+        simpleDescription += " (adjusted)"
+    }
+}
+
+var b = SimpleStructure()
+b.adjust()
+let bDescription = b.simpleDescription
+
+
+//Use "extension" to add functionality to an existing type
+//You can use extensions to add protocol conformance to a type that is delcared, or imported from a library or framework
+extension Int: ExampleProtocol {
+    var simpleDescription: String {
+    return "The number \(self)"
+    }
+    mutating func adjust() {
+        self += 42
+    }
+}
+
+7.simpleDescription
+
+extension Double: ExampleProtocol {
+    var simpleDescription: String = "The absolute value of \(self) is "
+    if let num = self < 0 {
+        simpleDescription += "\(num)"
+    }
+    else{
+        simpleDescription += ""
+    }
+    mutating func adjust() {
+        self += 10
+    }
+}
+
+(-15.6).absoluteValue
+
+
+
+                                                                    /* Generics */
